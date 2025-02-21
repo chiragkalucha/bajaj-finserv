@@ -7,7 +7,7 @@ export default function App() {
   const [selectedFilters, setSelectedFilters] = useState([]);
   const [error, setError] = useState("");
 
-  const backendURL = "https://bajaj-finserv-1-4y1u.onrender.com"; // Replace with your backend URL
+  const backendURL = "https://bajaj-finserv-3-xmrw.onrender.com"; // Replace with your backend URL
 
   const handleSubmit = async () => {
     try {
