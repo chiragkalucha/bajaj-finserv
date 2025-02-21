@@ -2,6 +2,22 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from typing import List
 import uvicorn
+from flask import Flask, request, jsonify
+from flask_cors import CORS
+
+app = Flask(__name__)
+
+# Allow all origins (not recommended for production)
+CORS(app)
+
+# Or restrict to a specific frontend URL
+CORS(app, resources={r"/*": {"origins": "http://localhost:5173"}})
+
+@app.route("/", methods=["POST"])
+def handle_request():
+    data = request.get_json()
+    return jsonify({"message": "Success", "received": data})
+
 
 # Initialize FastAPI app
 app = FastAPI()
